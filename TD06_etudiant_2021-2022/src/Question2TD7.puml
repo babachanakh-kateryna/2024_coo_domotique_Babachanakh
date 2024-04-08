@@ -1,0 +1,37 @@
+@startuml
+title Question 2 TD 7
+
+class Hifi {
+    - son : int
+    + allumer()
+    + eteindre()
+    + toString() : String
+}
+
+class Lampe {
+    - nom : String
+    - allume : boolean
+    + Lampe(nom : String)
+    + allumer()
+    + eteindre()
+    + toString() : String
+    + isAllume() : boolean
+}
+
+class Telecommande {
+    + Telecommande()
+    + ajouterLampe(lampe : Lampe)
+    + ajouterHifi(hifi : Hifi)
+    + activerLampe(indiceLampe : int)
+    + activerHifi(indiceHifi : int)
+    + desactiverLampe(indiceLampe : int)
+    + desactiverHifi(indiceHifi : int)
+    + activerTout()
+    + toString() : String
+    + getLampes() : List<Lampe>
+}
+
+Telecommande "1" --> "*" Lampe : - lampes
+Telecommande "1" --> "*" Hifi : - hifis
+
+@enduml
