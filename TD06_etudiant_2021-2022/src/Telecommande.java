@@ -16,12 +16,16 @@ public class Telecommande {
     public void activerAppareil(int indice) {
         if (indice >= 0 && indice < appareils.size()) {
             appareils.get(indice).allumer();
+        }else {
+            throw new IllegalArgumentException("appareil inexistante");
         }
     }
 
     public void desactiverAppareil(int indice) {
         if (indice >= 0 && indice < appareils.size()) {
             appareils.get(indice).eteindre();
+        }else {
+            throw new IllegalArgumentException("appareil inexistante");
         }
     }
 
@@ -38,5 +42,9 @@ public class Telecommande {
             result.append(appareil.toString()).append("\n");
         }
         return result.toString();
+    }
+
+    public List<Appareil> getAppareils() {
+        return appareils;
     }
 }
