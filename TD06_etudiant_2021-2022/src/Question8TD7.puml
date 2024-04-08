@@ -1,0 +1,41 @@
+@startuml
+title Question 8 TD 7
+
+interface Appareil {
+  + allumer() : void
+  + eteindre() : void
+  + toString() : String
+}
+class Hifi implements Appareil{
+    - son : int
+    + allumer()
+    + eteindre()
+    + toString() : String
+}
+
+class Lampe implements Appareil{
+    - nom : String
+    - allume : boolean
+    + Lampe(nom : String)
+    + allumer()
+    + eteindre()
+    + toString() : String
+    + isAllume() : boolean
+}
+
+class Telecommande {
+    + Telecommande()
+    + ajouterLampe(lampe : Lampe)
+    + ajouterHifi(hifi : Hifi)
+    + activerLampe(indiceLampe : int)
+    + activerHifi(indiceHifi : int)
+    + desactiverLampe(indiceLampe : int)
+    + desactiverHifi(indiceHifi : int)
+    + activerTout()
+    + toString() : String
+    + getLampes() : List<Lampe>
+}
+
+Telecommande "1" --> "*" Appareil : - appareils
+
+@enduml
