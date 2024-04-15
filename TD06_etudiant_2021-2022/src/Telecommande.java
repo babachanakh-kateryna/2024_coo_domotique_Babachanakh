@@ -49,7 +49,7 @@ public class Telecommande {
     }
 
     public int getNombre() {
-        return appareils.size(); 
+        return appareils.size();
     }
 
 }
