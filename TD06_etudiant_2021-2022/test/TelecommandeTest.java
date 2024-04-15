@@ -42,5 +42,28 @@ class TelecommandeTest {
 
         assertEquals("appareil inexistante", exception.getMessage());
     }
+
+    @Test
+    public void test5_AllumerCheminee() {
+        Telecommande telecommande = new Telecommande();
+        Cheminee cheminee = new Cheminee();
+        ChemineeAdapter chemineeAdapter = new ChemineeAdapter(cheminee);
+        telecommande.ajouterAppareil(chemineeAdapter);
+
+        telecommande.activerAppareil(0);
+        assertEquals(10, cheminee.getLumiere());
+    }
+
+    @Test
+    public void test6_EteindreCheminee() {
+        Telecommande telecommande = new Telecommande();
+        Cheminee cheminee = new Cheminee();
+        cheminee.changerIntensite(50); // Set the initial intensity to 50 for testing purposes
+        ChemineeAdapter chemineeAdapter = new ChemineeAdapter(cheminee);
+        telecommande.ajouterAppareil(chemineeAdapter);
+
+        telecommande.desactiverAppareil(0);
+        assertEquals(0, cheminee.getLumiere());
+    }
 }
 
