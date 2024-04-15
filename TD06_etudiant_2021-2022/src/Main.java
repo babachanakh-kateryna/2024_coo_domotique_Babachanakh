@@ -85,6 +85,8 @@ public class Main {
 		t.ajouterAppareil(new Lampe("Lampe2"));
 		t.ajouterAppareil(new Hifi());
 		t.ajouterAppareil(new Hifi());
+		t.ajouterAppareil(new ThermostatAdapter());
 	}
+
 
 }

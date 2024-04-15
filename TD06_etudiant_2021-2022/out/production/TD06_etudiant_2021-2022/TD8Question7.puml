@@ -1,0 +1,27 @@
+@startuml
+title Question 7 TD 8
+
+interface Appareil {
+  + allumer()
+  + eteindre()
+  + toString() : String
+}
+
+package thermos {
+    class Thermostat {
+        + monterTemperature()
+        + baisserTemperature()
+        + toString() : String
+    }
+}
+
+class ThermostatAdapter implements Appareil {
+    - thermostat : Thermostat
+    + allumer()
+    + eteindre()
+}
+
+Telecommande "1" --> "*" Appareil
+Appareil <|.. ThermostatAdapter
+ThermostatAdapter ..> thermos.Thermostat : uses
+@enduml
