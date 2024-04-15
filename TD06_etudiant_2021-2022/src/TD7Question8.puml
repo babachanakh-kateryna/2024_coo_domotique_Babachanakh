@@ -2,8 +2,8 @@
 title Question 8 TD 7
 
 interface Appareil {
-  + allumer() : void
-  + eteindre() : void
+  + allumer()
+  + eteindre()
   + toString() : String
 }
 class Hifi implements Appareil{
