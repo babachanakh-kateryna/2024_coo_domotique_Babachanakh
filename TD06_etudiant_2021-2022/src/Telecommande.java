@@ -47,4 +47,9 @@ public class Telecommande {
     public List<Appareil> getAppareils() {
         return appareils;
     }
+
+    public int getNombre() {
+        return appareils.size(); 
+    }
+
 }

@@ -58,7 +58,7 @@ class TelecommandeTest {
     public void test6_EteindreCheminee() {
         Telecommande telecommande = new Telecommande();
         Cheminee cheminee = new Cheminee();
-        cheminee.changerIntensite(50); 
+        cheminee.changerIntensite(50);
         ChemineeAdapter chemineeAdapter = new ChemineeAdapter(cheminee);
         telecommande.ajouterAppareil(chemineeAdapter);
 
